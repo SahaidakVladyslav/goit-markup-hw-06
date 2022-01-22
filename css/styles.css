@@ -182,15 +182,17 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  background-image: url(../images/close.svg);
-  background-position: center;
-  background-repeat: no-repeat;
   cursor: pointer;
 }
-.close-button:hover,
-.close-button:focus {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+.close-modal-svg {
+  background-size: cover;
+  fill: #000;
 }
+
+.close-button:hover .close-modal-svg {
+  fill: var(--accent-color);
+}
+
 .title-modal {
   font-weight: bold;
   font-size: 20px;
@@ -198,6 +200,13 @@ img {
   letter-spacing: 0.03em;
   margin-bottom: 12px;
   color: #212121;
+}
+.name-container > input,
+.tel-container > input,
+.email-container > input {
+  width: 448px;
+  height: 40px;
+  padding-left: 27px;
 }
 
 .input {
