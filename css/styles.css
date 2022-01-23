@@ -162,7 +162,7 @@ img {
 .modal {
   position: absolute;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -170,7 +170,10 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 39px 40px 41px;
+  padding-top: 40px;
+  padding-right: 39px;
+  padding-bottom: 40px;
+  padding-left: 41px;
 }
 .close-button {
   position: absolute;
@@ -206,15 +209,45 @@ img {
 .email-container > input {
   width: 448px;
   height: 40px;
-  padding-left: 27px;
+  padding-left: 32px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+}
+.name-container,
+.tel-container,
+.email-container {
+  position: relative;
 }
 
+.name-container > label,
+.tel-container > label,
+.email-container > label,
+.comment-container > label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
+.svg-input {
+  position: absolute;
+  left: 15px;
+  bottom: 11px;
+}
 .input {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+}
+input:hover {
+  border-color: var(--accent-color);
+}
+input:hover ~ .svg-input {
+  fill: var(--accent-color);
 }
 .input label {
   margin-bottom: 4px;
@@ -234,6 +267,37 @@ textarea {
   padding-left: 16px;
   padding-bottom: 12px;
   padding-right: 16px;
+}
+.hide-me {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.alternative-checkbox-svg {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border-radius: 2px;
+  border: 2px solid #212121;
+  margin-right: 8px;
+}
+.hide-me:checked + span > .alternative-checkbox-svg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.i-accept {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
 }
 .signature-container {
   margin-top: 20px;
