@@ -209,7 +209,7 @@ img {
 .email-container > input {
   width: 448px;
   height: 40px;
-  padding-left: 32px;
+  padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
@@ -268,6 +268,12 @@ textarea {
   padding-bottom: 12px;
   padding-right: 16px;
 }
+.signature-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 7px;
+  margin-left: 13px;
+}
 .hide-me {
   position: absolute;
   width: 1px;
@@ -278,22 +284,30 @@ textarea {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.opacity {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+}
+
 .alternative-checkbox-svg {
   display: inline-block;
   width: 16px;
   height: 15px;
   border-radius: 2px;
   border: 2px solid #212121;
-  margin-right: 8px;
   background-clip: border-box;
 }
-.hide-me:checked + span > .alternative-checkbox-svg {
+.hide-me:checked + label > span > .alternative-checkbox-svg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--accent-color);
   border-radius: 2px;
   border-color: var(--accent-color);
+  background-clip: border-box;
 }
 .i-accept {
   font-size: 14px;
@@ -301,9 +315,8 @@ textarea {
   letter-spacing: 0.03em;
   color: #757575;
 }
-.signature-container {
-  margin-top: 20px;
-  margin-bottom: 30px;
+.link-signature {
+  color: var(--accent-color);
 }
 .btn-form {
   width: 200px;
@@ -520,6 +533,11 @@ textarea {
 }
 .cellar-email {
   margin-top: 20px;
+  display: flex;
+}
+.cellar-email > input {
+  max-width: 358px;
+  max-height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -553,7 +571,6 @@ textarea {
   width: 200px;
   height: 50px;
   margin-left: 12px;
-  margin-top: 49px;
   padding-top: 10px;
   padding-right: 28px;
   padding-bottom: 10px;
@@ -567,6 +584,7 @@ textarea {
   line-height: 1.87;
   letter-spacing: 0.06em;
   border: none;
+  cursor: pointer;
 }
 .svg-cellar-btn {
   margin-left: 10px;
