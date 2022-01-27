@@ -186,8 +186,10 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   cursor: pointer;
+  background-color: #ffffff;
 }
 .close-modal-svg {
+  background-repeat: no-repeat;
   background-size: cover;
   fill: #000;
 }
@@ -214,6 +216,7 @@ img {
   box-sizing: border-box;
   border-radius: 4px;
   outline: none;
+  font-size: 14px;
 }
 .name-container,
 .tel-container,
@@ -243,12 +246,16 @@ img {
   display: flex;
   flex-direction: column;
 }
-input:hover {
+input:hover,
+input:focus {
   border-color: var(--accent-color);
 }
-input:hover ~ .svg-input {
+
+input:hover ~ .svg-input,
+input:focus ~ .svg-input {
   fill: var(--accent-color);
 }
+
 .input label {
   margin-bottom: 4px;
   font-family: Roboto;
@@ -267,6 +274,11 @@ textarea {
   padding-left: 16px;
   padding-bottom: 12px;
   padding-right: 16px;
+  outline: none;
+}
+textarea:hover,
+textarea:focus {
+  border-color: var(--accent-color);
 }
 .signature-container {
   margin-top: 20px;
@@ -284,12 +296,28 @@ textarea {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.opacity {
+.i-accept {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+.hide-me-to {
   display: inline-block;
   width: 16px;
   height: 15px;
+  background-color: tomato;
+  opacity: 0;
   margin-right: 7px;
+  pointer-events: none;
+}
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 15px;
 }
 
 .alternative-checkbox-svg {
@@ -309,12 +337,7 @@ textarea {
   border-color: var(--accent-color);
   background-clip: border-box;
 }
-.i-accept {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: #757575;
-}
+
 .link-signature {
   color: var(--accent-color);
 }
